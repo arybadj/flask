@@ -18,7 +18,7 @@ def about():
 
 
 #dynamic routing
-@app.route("/user/username")
+@app.route("/user/<username>")
 def user(username):
     return f"welcome user {username}"
 
@@ -40,7 +40,7 @@ def new_home():
 @app.errorhandler(404)
 def not_found(e):
     return jsonify({
-        "error": "404 not found"
+        "error": "404 not found",
         "message": "The requested URL was not found on the server"      
                     }),404
 
